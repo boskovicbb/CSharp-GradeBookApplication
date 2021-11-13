@@ -42,7 +42,7 @@ namespace GradeBook.UserInterfaces
             var name = parts[1];
             var type = parts[2];
 
-            BaseGradeBook gradeBook = new BaseGradeBook(name);
+            BaseGradeBook gradeBook;
 
             switch (type.ToUpper())
             {
@@ -60,7 +60,7 @@ namespace GradeBook.UserInterfaces
                     }
                 default:
                     Console.WriteLine("{0} is not a supported type of gradebook, please try again", type);
-                    break;
+                    return;
             }
 
             GradeBookUserInterface.CommandLoop(gradeBook);
